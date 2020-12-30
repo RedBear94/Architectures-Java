@@ -1,10 +1,11 @@
 package com.company;
 
-public class Product {
+public class Product implements ThingForSale {
     public int price;
     public String name;
     public String category;
 
+    @Override
     public void setPrice(int price){
         this.price = price;
     }
@@ -25,4 +26,9 @@ public class Product {
                 ", category='" + category + '\'' +
                 '}';
     }
+
+    public int getPrice() {
+        return price;
+    }
+
 }
