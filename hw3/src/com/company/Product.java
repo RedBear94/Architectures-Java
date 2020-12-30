@@ -1,12 +1,12 @@
 package com.company;
 
 public class Product implements ThingForSale {
-    public int price;
+    public double price;
     public String name;
     public String category;
 
     @Override
-    public void setPrice(int price){
+    public void setPrice(double price){
         this.price = price;
     }
 
@@ -27,7 +27,7 @@ public class Product implements ThingForSale {
                 '}';
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 

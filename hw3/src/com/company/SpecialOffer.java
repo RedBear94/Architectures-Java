@@ -6,12 +6,14 @@ import java.util.List;
 // Composite
 public class SpecialOffer extends Product {
     private List<Product> groupProducts = new ArrayList<>();
+    private double discount = 0.1;
 
     public SpecialOffer(){
     }
 
-    public SpecialOffer(List<Product> groupProducts) {
+    public SpecialOffer(List<Product> groupProducts, int discount) {
         this.groupProducts = groupProducts;
+        this.discount = discount;
     }
 
     public void addProduct(Product product){
@@ -26,7 +28,8 @@ public class SpecialOffer extends Product {
 
     public void findOverallPrice(){
         for (Product product : groupProducts) {
-            this.price = product.getPrice();
+            this.price += product.getPrice();
         }
+        this.price = price - price * discount;
     }
 }
