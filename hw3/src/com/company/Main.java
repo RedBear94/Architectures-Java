@@ -8,9 +8,15 @@ public class Main {
         Factory factory = getProductFactory(owner);
 
         if(factory != null){
+            // Test Factory
             Product product = factory.create("Milk");
             System.out.println(product);
             product.setName("NewMilkName");
+            System.out.println(product);
+
+            // Test Command
+            EditProductPrice editProductPrice = new EditProductPrice(product);
+            editProductPrice.doublePrice();
             System.out.println(product);
         }
     }

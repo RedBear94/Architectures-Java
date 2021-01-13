@@ -5,6 +5,8 @@ public class Product implements ThingForSale {
     public String name;
     public String category;
 
+    public double fullCosts, profit, count;
+
     @Override
     public void setPrice(double price){
         this.price = price;
@@ -31,4 +33,12 @@ public class Product implements ThingForSale {
         return price;
     }
 
+    public double getOptimalPriceForProduct() {
+        // Цена = (Полные затраты + Прибыль) / Количество товара
+        return (fullCosts + profit) / count;
+    }
+
+    public double getDoublePrice() {
+        return price * 2;
+    }
 }
